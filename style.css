@@ -1,0 +1,273 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #000000, #BC1E22);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-family: monospace;
+  position: relative;
+  padding-bottom: 5em;
+}
+
+a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #394A59;
+}
+
+
+header {
+  grid-area: header;
+  background-color: #64696C;
+  border: solid 1px red;
+  border-radius: 10px;
+  color: #fff;
+  text-shadow: 0 0 0.625em #bc1e22, 0 0 1.5625em #bc1e22, -0.0625em 0 0.125em rgb(0 0 0 / 50%)
+}
+
+
+#plantilla {
+  display: grid;
+  height: 100vh;
+  grid-template-areas:
+    " header header "
+    " texto fotoindex "
+    " footer footer "
+  ;
+  grid-template-rows: 45px auto 5px;
+  grid-template-columns: repeat (2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 25px;
+  padding: 10px;
+}
+
+footer {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-area: footer;
+  color: black;
+  background-color: #64696C;
+  border: solid 1px #FFFFFF;
+  border-radius: 10px;
+  font-size: 11px;
+  align-self: center;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+ul li {
+  font-weight: bold;
+  color: red;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+ul li:hover {
+  background-color: crimson;
+}
+
+.nav>li {
+  float: left;
+}
+
+.nav li a {
+  color: #fff;
+  display: block;
+  border-radius: 5px;
+}
+
+.nav li a:hover {
+  color: #394A59;
+  background-color: crimson;
+}
+
+.nav li ul {
+  display: none;
+  position: absolute;
+}
+
+.nav li:hover>ul {
+  display: block;
+  color: #fff;
+}
+
+.shake {
+  font-size: 10rem;
+  margin: auto;
+  border-radius: 10%;
+  display: block;
+}
+
+.shake:hover {
+  animation: agitar 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes agitar {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  90% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+#texto {
+  grid-area: texto;
+  color: whitesmoke;
+  border: solid 1px #FFFFFF;
+  border-radius: 15px;
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.carousel-inner {
+  width: 100%;
+  height: auto;
+}
+
+#fotoindex {
+  grid-area: fotoindex;
+  display: flex;
+  background-size: 100% 100%;
+}
+
+ol {
+  list-style: none
+}
+
+form legend {
+  font-weight: bold;
+}
+
+form {
+  position: left;
+  border: none;
+}
+
+form input[type=text] {
+  background-color: #394A59;
+}
+
+form input[type=email] {
+  background-color: #394A59;
+}
+
+form input[type=number] {
+  background-color: #394A59;
+}
+
+#confon {
+  background-image: url("imagenes/death-star.JPG");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding: 10px;
+}
+
+@media screen and (max-width: 576px) {
+  body {
+    background: linear-gradient(to bottom, #000000, #BC1E22);
+    background-repeat: no-repeat;
+  }
+
+  #plantilla {
+    grid-template-areas:
+      " header header "
+      " texto texto "
+      " fotoindex fotoindex "
+      " footer footer "
+    ;
+    display: grid;
+    height: 100%;
+    grid-template-rows: auto auto 400px 5px;
+    grid-column-gap: 10px;
+    grid-row-gap: 25px;
+    padding: 10px;
+  }
+
+  #confon {
+    background-image: url("imagenes/death-star.JPG");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 900px;
+  }
+
+  header {
+    grid-area: header;
+    align-items: center;
+    color: #fff;
+    background-color: transparent;
+    text-shadow: 0 0 0.625em #bc1e22, 0 0 1.5625em #bc1e22, -0.0625em 0 0.125em rgb(0 0 0 / 50%)
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul li {
+    padding: 15px;
+  }
+
+  .nav ul li {
+    padding: 5px;
+  }
+}
